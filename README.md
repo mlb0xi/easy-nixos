@@ -293,3 +293,5 @@ A ce sujet, la bible du nixosien se situe ici : https://search.nixos.org/package
 Et ici : https://search.nixos.org/options (pour rechercher un paramétrage).
 Essayez d'y aller et de rechercher `nano`, c'est très intéressant.
 
+Il est important de noter que ce n'est pas obligatoire de paramétrer de manière déclarative : dans le /home, on n'est pas du tout en lecture seule heureusement, donc on peut tout à fait créer son fichier de conf à la main. Simplement, en le faisant dans le module `nix`, on le fait une seule fois, et plus jamais ensuite même en cas de réinstallation complète.
+
