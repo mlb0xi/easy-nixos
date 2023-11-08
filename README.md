@@ -6,6 +6,8 @@ L'objectif est donc de mettre à disposition une documentation simple, composée
 
 Ce projet n'a pas vocation à essayer de couvrir l'ensemble des possibilités de NixOS.
 
+-- EN CONSTRUCTION --
+
 
 # 2. Principes généraux sur le gestionnaire de paquets Nix et NixOS
 
