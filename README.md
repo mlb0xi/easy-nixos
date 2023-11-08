@@ -281,7 +281,7 @@ En autre exemple, on peut prendre le module `./server/nano.nix`. Le terme "serve
 
 ```
 
-Ce module est très intéressant, car il inclut deux fonctions primordiales que tout utilisateur de Nix utilisera au quotidien :
+Ce module est très intéressant, car il inclut deux fonctions primordiales que tout utilisateur de Nix utilisera au quotidien pour installer une nouvelle application :
 - `environment.systemPackages` : permet d'ajouter un paquet/logiciel au système : l'équivalent du `apt install`,
 - `programs.monProgramme` : permet de configurer son programme de manière déclarative.
 
