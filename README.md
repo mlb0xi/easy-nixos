@@ -45,7 +45,7 @@ sgdisk \
 sgdisk \
   --new=2:0:+300G \
   --typecode=2:8304 \
-  --change-name=2:linux \
+  --change-name=2:nixos1 \
   $target_device
 
 partprobe -s "$target_device"
