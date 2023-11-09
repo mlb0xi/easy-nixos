@@ -28,8 +28,9 @@ Pourquoi cette configuration ? Il s'agit de ma configuration, qui pourra être �
 - chiffrement complet, boot inclus (full disk encryption) : la distro étant installée sur un PC portable, autant renforcer la sécurité,
 - fonctionnement par `LABEL` : c'est aussi un choix arbitraire, rien n'empêche de fonctionner par `UUID` ou simplement par `/dev/...`.
 
+## A. Depuis un disque vierge
 
-Voici les lignes de commande pour paramétrer ainsi depuis un disque vierge :
+Voici les lignes de commande pour paramétrer ainsi depuis un disque vierge, en commençant par le formatage du disque :
 ```bash
 target_device=/dev/sda
 
@@ -65,5 +66,32 @@ tune2fs -L nixos1 /dev/mapper/rootfs
 
 ```
 
+Le disque peut tout à fait être configuré avec `gparted` ou `cfdisk`, ceci c'est qu'un exemple full ligne de commande.
+
+A ce niveau, on a un disque bien configuré, il faut ensuite :
+- monter les partitions sur `/mnt`
+- copier les fichiers de configuration sur `/mnt/etc/nixos`
+- modifier le fichier `cfgpath` pour l'installation uniquement,
+- lancer la commande magique d'installation `nixos-install`
+
+```bash
+# Montage des disques
+mount /dev/mapper/rootfs /mnt
+
+mkdir -p /mnt/boot/efi
+mount $target_device"1" /mnt/boot/efi
+
+###
+# Copier ensuite le contenu du dépôt github sur /mnt/etc/nixos
+###
+
+# Puis entrer les commandes suivantes
+
+echo "/mnt/etc/nixos" > /mnt/etc/nixos/cfgpath.nix
+cp /mnt/etc/nixos/machine.nix /etc/nixos/
+cp /mnt/etc/nixos/cfgpath.nix /etc/nixos/
+
+nixos-install
+```
 
 -- EN CONSTRUCTION --
