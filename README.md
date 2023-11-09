@@ -25,7 +25,9 @@ Pourquoi cette configuration ? Il s'agit de ma configuration, qui pourra être �
 
 - système de fichiers `ext4` : on n'a pas besoin de `btrfs`, le principal intérêt de `btrfs` étant ses snapshots (inutile ici). Autant rester simple, si on n'a pas besoin de sous-volumes particuliers,
 - taille de 300G : pas besoin de 300G en soit, c'est pour voir venir, car il est vrai que NixOS prend de la place, dû au fait que la distribution conserve par défaut tous les anciens builds du système - cf la documentation pour voir comment faire du ménage,
-- chiffrement complet, boot inclus (full disk encryption) : la distro étant installée sur un PC portable, autant renforcer la sécurité.
+- chiffrement complet, boot inclus (full disk encryption) : la distro étant installée sur un PC portable, autant renforcer la sécurité,
+- fonctionnement par `LABEL` : c'est aussi un choix arbitraire, rien n'empêche de fonctionner par `UUID` ou simplement par `/dev/...`.
+
 
 Voici les lignes de commande pour paramétrer ainsi depuis un disque vierge :
 ```bash
