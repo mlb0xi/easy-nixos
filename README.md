@@ -39,7 +39,7 @@ sgdisk -Z "$target_device"
 sgdisk \
   --new=1:0:+256M \
   --typecode=1:ef00 \
-  --change-name=1:EFISYSTEM \
+  --change-name=1:uefi1 \
   $target_device
 
 sgdisk \
@@ -52,7 +52,7 @@ partprobe -s "$target_device"
 
 
 # Luks
-cryptsetup luksFormat --type luks1 $target_device
+cryptsetup luksFormat --type luks1 $target_device"2"
 cryptsetup luksOpen $target_device rootfs
 
 # Systèmes de fichiers
