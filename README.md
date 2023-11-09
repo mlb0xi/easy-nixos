@@ -57,7 +57,11 @@ cryptsetup luksOpen $target_device rootfs
 
 # Systèmes de fichiers
 mkfs.vfat -F32 $target_device"1"
+fatlabel $target_device"1" UEFI1
+
 mkfs.ext4 /dev/mapper/rootfs
+tune2fs -L nixos1 /dev/mapper/rootfs
+
 
 ```
 
