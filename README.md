@@ -13,11 +13,11 @@ Avant tout, il est recommandé de lire la partie documentation : https://github.
 
 Afin de mettre en place les modules Nixos "sans réfléchir", il faudra mettre en place la configuration suivante :
 ```  
-NAME         		SIZE 		FSTYPE      		LABEL   		PARTLABEL
+NAME         	SIZE 	FSTYPE      	LABEL   	PARTLABEL
 sda                 
-├─sda1  		256M 		vfat        		UEFI1   			uefi1        
-└─sda2  		300G 		crypto_LUKS         				nixos1
-  └─rootfs   	300G 		ext4        		nixos1  
+├─sda1  	256M 	vfat        	UEFI1   		uefi1        
+└─sda2  	300G 	crypto_LUKS         			nixos1
+  └─rootfs   300G 	ext4        	nixos1  
   
 ```
 
