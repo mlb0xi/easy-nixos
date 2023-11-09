@@ -12,12 +12,13 @@ Ce projet n'a pas vocation à essayer de couvrir l'ensemble des possibilités de
 Avant tout, il est recommandé de lire la partie documentation : https://github.com/mlb0xi/easy-nixos/blob/main/DOCUMENTATION.md
 
 Afin de mettre en place les modules Nixos "sans réfléchir", il faudra mettre en place la configuration suivante :
-```
-NAME                   SIZE        FSTYPE              LABEL      PARTLABEL
-sda                     
-├─sda                   256M     vfat                     UEFI1        uefi1      
-└─sda                   300G      crypto_LUKS                       nixos1
-  └─rootfs        300G       ext4                    nixos1
+```  
+NAME         SIZE FSTYPE      LABEL   PARTLABEL
+sda                 
+├─sda1  256M vfat        UEFI1   uefi1        
+└─sda2  300G crypto_LUKS         nixos1
+  └─rootfs   300G ext4        nixos1  
+  
 ```
 
 Pourquoi cette configuration ? Il s'agit de ma configuration, qui pourra être évidemment adaptée selon les besoins de chacun :
