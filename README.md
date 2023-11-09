@@ -60,3 +60,6 @@ mkfs.vfat -F32 $target_device"1"
 mkfs.ext4 /dev/mapper/rootfs
 
 ```
+
+
+-- EN CONSTRUCTION --
