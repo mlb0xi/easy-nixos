@@ -16,21 +16,25 @@ Afin de mettre en place les modules Nixos "sans réfléchir", il faudra mettre e
 NAME         	SIZE 	FSTYPE      	LABEL   	PARTLABEL
 sda                 
 ├─sda1  	256M 	vfat        	UEFI1   	uefi1        
-└─sda2  	300G 	crypto_LUKS         		nixos1
-  └─rootfs   300G 	ext4        	nixos1  
-  
+└─sda2  	300G 	ext4         	nixos1	nixos1	  
 ```
 
-Pourquoi cette configuration ? Il s'agit de ma configuration, qui pourra être évidemment adaptée selon les besoins de chacun :
+Les points importants sont :
 
-- système de fichiers `ext4` : on n'a pas besoin de `btrfs`, le principal intérêt de `btrfs` étant ses snapshots (inutile ici). Autant rester simple, si on n'a pas besoin de sous-volumes particuliers,
+- système de fichiers `ext4` : simple et efficace,
 - taille de 300G : pas besoin de 300G en soit, c'est pour voir venir, car il est vrai que NixOS prend de la place, dû au fait que la distribution conserve par défaut tous les anciens builds du système - cf la documentation pour voir comment faire du ménage,
-- chiffrement complet, boot inclus (full disk encryption) : la distro étant installée sur un PC portable, autant renforcer la sécurité,
-- fonctionnement par `LABEL` : c'est aussi un choix arbitraire, rien n'empêche de fonctionner par `UUID` ou simplement par `/dev/...`.
+- fonctionnement par `LABEL` : c'est le choix de la souplesse, rien n'empêche de fonctionner par `UUID` par exemple.
 
-## A. Depuis un disque vierge
+## A. Depuis une installation fraiche de NixOS
+
+
+Il faut s'assurer d'avoir un paramétrage correct pour les `label` des partitions.
+
+
+## B. Depuis un disque vierge
 
 Voici les lignes de commande pour paramétrer ainsi depuis un disque vierge, en commençant par le formatage du disque :
+
 ```bash
 target_device=/dev/sda
 
@@ -51,17 +55,12 @@ sgdisk \
 
 partprobe -s "$target_device"
 
-
-# Luks
-cryptsetup luksFormat --type luks1 $target_device"2"
-cryptsetup luksOpen $target_device rootfs
-
 # Systèmes de fichiers
 mkfs.vfat -F32 $target_device"1"
 fatlabel $target_device"1" UEFI1
 
-mkfs.ext4 /dev/mapper/rootfs
-tune2fs -L nixos1 /dev/mapper/rootfs
+mkfs.ext4 $target_device"2"
+tune2fs -L nixos1 $target_device"2"
 
 
 ```

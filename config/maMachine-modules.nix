@@ -4,7 +4,7 @@
 "wifi"
 
 # System
-"grub" "fullencrypt" "plymouth"
+"grub" "plymouth"
 "fstab" "trim" "swapfile"
 "firewall"
 "network" "homemanager" "locale"

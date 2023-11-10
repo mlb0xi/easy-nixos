@@ -6,7 +6,6 @@
 "./hardware/soundcard.nix"
 "./hardware/wifi.nix"
 "./system/grub.nix"
-"./system/fullencrypt.nix"
 "./system/plymouth.nix"
 "./system/fstab.nix"
 "./system/data-tuxedo.nix"
