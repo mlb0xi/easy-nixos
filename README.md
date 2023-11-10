@@ -11,7 +11,7 @@ Ce projet n'a pas vocation à essayer de couvrir l'ensemble des possibilités de
 
 Avant tout, il est recommandé de lire la partie documentation : https://github.com/mlb0xi/easy-nixos/blob/main/DOCUMENTATION.md
 
-Afin de mettre en place les modules Nixos "sans réfléchir", il faudra avoir la configuration suivante (command ci-dessous pour mettre les `LABEL`) :
+Afin de mettre en place les modules Nixos "sans réfléchir", il faudra avoir la configuration suivante (commande un peu plus bas pour s'occuper des `LABEL`) :
 ```  
 NAME         	SIZE 	FSTYPE      	LABEL   	PARTLABEL
 sda                 
