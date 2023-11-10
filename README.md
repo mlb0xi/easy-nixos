@@ -28,7 +28,30 @@ Les points importants sont :
 ## A. Depuis une installation fraiche de NixOS
 
 
-Il faut s'assurer d'avoir un paramétrage correct pour les `label` des partitions.
+Il faut s'assurer d'avoir :
+- correctement formaté les partitions lors de l'installation : `ext4`,
+- un paramétrage correct pour les `label` des partitions, via la commande suivante.
+
+```bash
+target_device=/dev/sda
+
+sgdisk --change-name=1:uefi1 $target_device
+tune2fs -L nixos1 $target_device"2"
+```
+
+Copier ensuite ce dépôt github sur `/etc/nixos/`, via la commande suivante :
+
+```bash
+
+# Préparation
+sudo chown -R $USER /etc/nixos
+cp -r /etc/nixos /etc/nixos.BAK
+
+# Installation du dépôt git
+git clone https://github.com/mlb0xi/easy-nixos /etc/nixos
+```
+
+Vérifier que la configuration des modules correspond à votre config (notamment matérielle), dans `/etc/nixos/config/maMachine-modules.nix`
 
 
 ## B. Depuis un disque vierge
@@ -62,7 +85,6 @@ fatlabel $target_device"1" UEFI1
 mkfs.ext4 $target_device"2"
 tune2fs -L nixos1 $target_device"2"
 
-
 ```
 
 A ce niveau, on a un disque bien configuré, il faut ensuite :
@@ -91,4 +113,3 @@ cp /mnt/etc/nixos/cfgpath.nix /etc/nixos/
 nixos-install
 ```
 
--- EN CONSTRUCTION --
