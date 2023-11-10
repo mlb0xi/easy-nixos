@@ -7,7 +7,14 @@
     sweethome3d.furniture-editor
 
 #    exodus
+    molotov
+    
+    bitwarden
 
+    libsForQt5.k3b
+    autorandr
+    xorg.libxcvt
+    
     ];
 
 }

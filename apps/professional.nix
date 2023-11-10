@@ -7,7 +7,13 @@
 #   synology-drive-client
     wireguard-tools
     vncdo
-
+   
+    sqlitebrowser
+    sqlite
+    obsidian
+    meld
+    pdfarranger   
+    
     android-tools
 
     logseq #obsidian alternative

@@ -1,7 +1,7 @@
 {
   # configuration.nix (system)
   nixos_version   = "23.05";
-  username        = "tuxedo";
+  username        = "NomUtilisateur";
 
   # fullencrypt.nix (system)
   # ne pas oublier de labéliser les partitions

@@ -14,15 +14,7 @@
 
     kdenlive
     #davinci-resolve
+    obs-studio  
 
-    obs-studio
-
-
-    bitwarden
-
-    molotov
-
-    protonvpn-gui
-    networkmanagerapplet
   ];
 }

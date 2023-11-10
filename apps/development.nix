@@ -3,12 +3,13 @@
 {
   environment.systemPackages = with pkgs; [
 
-    # Nix-tools
-    nix-prefetch-git    
-    nix-prefetch-github
-    nixpkgs-fmt
+  # Automatisation
+    jq
+    ansible
+    yt-dlp
+    thefuck
 
-    # Meson build
+  # Meson build
     meson ninja
 
     # GTK apps build

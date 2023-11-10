@@ -18,14 +18,15 @@
     ncdu
     p7zip
     
+    # Nix-tools
+    nix-prefetch-git    
+    nix-prefetch-github
+    nixpkgs-fmt
+    
     # Automatisation
     cron
     rsync
     yq
-    jq
-    ansible
-    yt-dlp
-    thefuck
     
     # Matériel
     lsof

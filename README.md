@@ -53,6 +53,8 @@ git clone https://github.com/mlb0xi/easy-nixos /etc/nixos
 
 Vérifier que la configuration des modules correspond à votre config (notamment matérielle), dans `/etc/nixos/config/maMachine-modules.nix`
 
+Par défaut, le full intel est activé
+
 
 ## B. Depuis un disque vierge
 
