@@ -46,8 +46,9 @@ Copier ensuite ce dépôt github sur `/etc/nixos/`, via la commande suivante :
 ```bash
 
 # Préparation
+# A fait en tant qu'utilisateur, pas en tant que root ici
 sudo chown -R $USER /etc/nixos
-cp -r /etc/nixos /etc/nixos.BAK
+sudo cp -r /etc/nixos /etc/nixos.BAK
 
 # Installation du dépôt git
 git clone https://github.com/mlb0xi/easy-nixos /etc/nixos
