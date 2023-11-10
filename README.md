@@ -50,14 +50,14 @@ Copier ensuite ce dépôt github sur `/etc/nixos/`, via la commande suivante :
 sudo chown -R $USER /etc/nixos
 sudo cp -r /etc/nixos /etc/nixos.BAK
 
-# Installation du dépôt git
-git clone https://github.com/mlb0xi/easy-nixos /etc/nixos
+# Installation du dépôt (pas besoin d'installer git)
+nix-shell -p git --run "git clone https://github.com/mlb0xi/easy-nixos /etc/nixos"
 ```
 
 Vérifier que la configuration des modules correspond à votre config (notamment matérielle), dans `/etc/nixos/config/maMachine-modules.nix`
 
 Voici en détail ce qu'il faut regarder :
-- dans `hardware`, avez-vous un full intel (`intelcpu.nix` et `intelgpu.nix`). Sinon, modifier pour AMD ou Nvidia,
+- dans `hardware`, avez-vous un full intel (`intelcpu` et `intelgpu`). Sinon, modifier pour AMD ou Nvidia,
 - dans `system`, est-ce que vous voulez un pare-feu (par défaut oui), un `swap` sous forme de swapfile, etc.
 - dans `desktop`, par défaut c'est GNOME,
 - dans `apps`, quelles applications souhaitez-vous installer (plusieurs packs sont proposés pour le multimedia, gaming, etc.).
