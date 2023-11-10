@@ -10,7 +10,7 @@ Les grands principes à comprendre, pour un utilisateur venant d'une autre distr
 - tout est conteneurisé : pas au sens de Flatpak ou docker, mais à sa manière ; tout est dans `/nix/store` et rien n'est modifiable à la main par l'utilisateur (système en lecture seule).
 
 Les principaux avantages de NixOS sont donc :
-- la reproductibilité : comme tout est déclaré dans quelques fichiers de configuration, il suffit de copier ces fichiers sur une autre machine, faire un `rebuild`, et on retrouve une copie conforme de la première,
+- la reproductibilité : comme tout est déclaré dans quelques fichiers de configuration, il suffit de copier ces fichiers sur une autre machine, faire un `rebuild`, et on retrouve une copie conforme de la première. Une autre manière de le dire c'est que la réinstallation complète de la machine est triviale (facile et rapide),
 - la stabilité : comme tout est conservé, si la machine ne redémarre pas après une mise à jour, il suffit de choisir un autre `build` lors du démarrage et on redémarre sur une version plus ancienne du système,
 - la sécurité : comme tout est conteneurisé et en lecture seule, sauf si un programme malveillant parvient à arriver dans les dépôts de NixOS, la sécurité est renforcée.
 
