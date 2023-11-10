@@ -35,8 +35,10 @@ Il faut s'assurer d'avoir :
 ```bash
 target_device=/dev/sda
 
-sgdisk --change-name=1:uefi1 $target_device
+nix-shell -p gptfdisk --run "sgdisk --change-name=1:uefi1 $target_device"
 tune2fs -L nixos1 $target_device"2"
+
+partprobe -s "$target_device"
 ```
 
 Copier ensuite ce dépôt github sur `/etc/nixos/`, via la commande suivante :
