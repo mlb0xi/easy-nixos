@@ -19,5 +19,4 @@
 "office"
 
 # Apps paramétrées
-"chromium" "firefox" "thunderbird"
-"video-downloader-git"
+"firefox"

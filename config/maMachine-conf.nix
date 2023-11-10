@@ -4,6 +4,7 @@
   username        = "NomUtilisateur";
 
   # fullencrypt.nix (system)
+  # seulement utile en cas de chiffrement complet du disque
   # ne pas oublier de labéliser les partitions
   luks_partlabel  = "nixos1";
   luks_data_label = "data2";
@@ -18,9 +19,10 @@
   resume_offset   = "9335484";
 
   # network.nix (system)
-  hostName        = "nix-tux";
+  hostName        = "nixos-facile";
 
   # python.nix (server)
+  # seulement utilse en cas d'installation de python
   pyVersion       = "python311Packages";
 
   # locale.nix (system) / gnome.nix (desktop)

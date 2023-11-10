@@ -25,11 +25,11 @@ Les points importants sont :
 - taille de 300G : pas besoin de 300G en soit, c'est pour voir venir, car il est vrai que NixOS prend de la place, dû au fait que la distribution conserve par défaut tous les anciens builds du système - cf la documentation pour voir comment faire du ménage,
 - fonctionnement par `LABEL` : c'est le choix de la souplesse, rien n'empêche de fonctionner par `UUID` par exemple.
 
+
 ## A. Depuis une installation fraiche de NixOS
 
-
 Il faut s'assurer d'avoir :
-- correctement formaté les partitions lors de l'installation : `ext4`,
+- correctement formaté les partitions lors de l'installation : `ext4` pour la partition système, et une partition uefi,
 - un paramétrage correct pour les `label` des partitions, via la commande suivante.
 
 ```bash
@@ -53,7 +53,29 @@ git clone https://github.com/mlb0xi/easy-nixos /etc/nixos
 
 Vérifier que la configuration des modules correspond à votre config (notamment matérielle), dans `/etc/nixos/config/maMachine-modules.nix`
 
-Par défaut, le full intel est activé
+Voici en détail ce qu'il faut regarder :
+- dans `hardware`, avez-vous un full intel (`intelcpu.nix` et `intelgpu.nix`). Sinon, modifier pour AMD ou Nvidia,
+- dans `system`, est-ce que vous voulez un pare-feu (par défaut oui), un `swap` sous forme de swapfile, etc.
+- dans `desktop`, par défaut c'est GNOME,
+- dans `apps`, quelles applications souhaitez-vous installer (plusieurs packs sont proposés pour le multimedia, gaming, etc.).
+
+Ensuite, il faut aller personnaliser son nom d'utilisateur dans `/etc/nixos/config/maMachine-conf.nix`.
+
+Et voilà.
+
+Il reste une commande à lancer pour un remplissage automatique du fichier contenant les modules `/etc/nixos/auto/maMachine-modules.nix`, puis on pourra lancer le rebuild.
+
+```bash
+
+# Remplissage automatique du fichier de modules
+cd /etc/nixos && bash bash/nixos-autoModules.sh
+
+# Rebuild du système
+sudo nixos-rebuild boot
+```
+
+Au reboot, tout sera en place.
+
 
 
 ## B. Depuis un disque vierge
