@@ -16,7 +16,7 @@ Afin de mettre en place les modules Nixos "sans réfléchir", il faudra mettre e
 NAME         	SIZE 	FSTYPE      	LABEL   	PARTLABEL
 sda                 
 ├─sda1  	256M 	vfat        	UEFI1   	uefi1        
-└─sda2  	300G 	ext4         	nixos1	nixos1	  
+└─sda2  	300G 	ext4         	nixos1		nixos1	  
 ```
 
 Les points importants sont :
