@@ -65,8 +65,6 @@ tune2fs -L nixos1 $target_device"2"
 
 ```
 
-Le disque peut tout à fait être configuré avec `gparted` ou `cfdisk`, ceci c'est qu'un exemple full ligne de commande.
-
 A ce niveau, on a un disque bien configuré, il faut ensuite :
 - monter les partitions sur `/mnt`
 - copier les fichiers de configuration sur `/mnt/etc/nixos`
@@ -75,7 +73,7 @@ A ce niveau, on a un disque bien configuré, il faut ensuite :
 
 ```bash
 # Montage des disques
-mount /dev/mapper/rootfs /mnt
+mount $target_device"2" /mnt
 
 mkdir -p /mnt/boot/efi
 mount $target_device"1" /mnt/boot/efi
