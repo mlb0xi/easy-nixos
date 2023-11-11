@@ -16,13 +16,13 @@ Afin de mettre en place les modules Nixos "sans réfléchir", il faudra avoir la
 NAME         	SIZE 	FSTYPE      	LABEL   	PARTLABEL
 sda                 
 ├─sda1  	256M 	vfat        	UEFI1   	uefi1        
-└─sda2  	300G 	ext4         	nixos1		nixos1	  
+└─sda2  	150G 	ext4         	nixos1		nixos1	  
 ```
 
 Les points importants sont :
 
 - système de fichiers `ext4` : simple et efficace,
-- taille de 300G : pas besoin de 300G en soit, c'est pour voir venir, car il est vrai que NixOS prend de la place, dû au fait que la distribution conserve par défaut tous les anciens builds du système - cf la documentation pour voir comment faire du ménage,
+- taille de 150G : pas besoin de 150G en soit, c'est pour voir venir, car il est vrai que NixOS prend de la place, dû au fait que la distribution conserve par défaut tous les anciens builds du système - cf la documentation pour voir comment faire du ménage,
 - fonctionnement par `LABEL` : c'est le choix de la souplesse, rien n'empêche de fonctionner par `UUID` par exemple.
 
 
