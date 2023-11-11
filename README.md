@@ -99,7 +99,7 @@ sgdisk \
   $target_device
 
 sgdisk \
-  --new=2::+300G \
+  --largest-new=2 \
   --typecode=2:8304 \
   --change-name=2:nixos1 \
   $target_device
