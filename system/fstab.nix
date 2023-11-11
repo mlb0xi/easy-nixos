@@ -56,6 +56,6 @@ in
 
 
   boot.initrd.availableKernelModules = [ 
-    "xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" "rtsx_pci_sdmmc" ];
-
+    "xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" "rtsx_pci_sdmmc" "virtio_pci" "sr_mod" "virtio_blk" ];
+    
 }
