@@ -3,8 +3,14 @@
 {
   environment.systemPackages = with pkgs; [
 
+  # Console tools
+  vim
+  git
+  openssl
+  
   # Automatisation
     jq
+    yq
     ansible
     yt-dlp
     thefuck

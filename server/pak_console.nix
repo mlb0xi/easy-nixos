@@ -6,12 +6,9 @@
     exfatprogs
     
     # Outils de base
-    vim
     bat
-    git
     htop
     wget
-    openssl
     nixos-icons
     neofetch
     tree
@@ -26,7 +23,6 @@
     # Automatisation
     cron
     rsync
-    yq
     
     # Matériel
     lsof
