@@ -109,8 +109,8 @@ sgdisk \
 partprobe -s "$target_device"
 
 # Systèmes de fichiers
-mkfs.vfat -n UEFI1 -F32 /dev/disk/by-label/uefi1
-mkfs.ext4 -L nixos1 -F /dev/disk/by-label/nixos1
+mkfs.vfat -n UEFI1 -F32 /dev/disk/by-partlabel/uefi1
+mkfs.ext4 -L nixos1 -F /dev/disk/by-partlabel/nixos1
 
 # Vérifions nos partitions
 lsblk -o NAME,SIZE,LABEL,PARTLABEL
