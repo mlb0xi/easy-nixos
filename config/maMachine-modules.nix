@@ -5,7 +5,6 @@
 # System
 "grub" "fstab" "trim" "swapfile"
 "firewall" "network" "homemanager" "locale"
-"libvirt" "serial0"
 
 # Server
 "pak_console" "openssh" 
