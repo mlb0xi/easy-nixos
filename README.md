@@ -124,10 +124,10 @@ A ce niveau, on a un disque bien configuré, il faut ensuite :
 
 ```bash
 # Montage des disques
-mount $target_device"2" /mnt
+mount /dev/disk/by-label/nixos1 /mnt
 
 mkdir -p /mnt/boot/efi
-mount $target_device"1" /mnt/boot/efi
+mount /dev/disk/by-partlabel/uefi1 /mnt/boot/efi
 
 # Installation du dépôt
 # (pas besoin d'installer git de manière permanente grâce à nix-shell)
