@@ -88,6 +88,7 @@ Voici les lignes de commande pour paramétrer ainsi depuis un disque vierge, en 
 
 ```bash
 # Modifier ici avec le nom du disque où installer NixOS
+# target_device=/dev/nvme0n1
 target_device=/dev/sda
 
 # Table de partitionnement et partitions
@@ -108,8 +109,8 @@ sgdisk \
 partprobe -s "$target_device"
 
 # Systèmes de fichiers
-mkfs.vfat -n UEFI1 -F32 $target_device"1"
-mkfs.ext4 -L nixos1 -F $target_device"2"
+mkfs.vfat -n UEFI1 -F32 /dev/disk/by-label/uefi1
+mkfs.ext4 -L nixos1 -F /dev/disk/by-label/nixos1
 
 # Vérifions nos partitions
 lsblk -o NAME,SIZE,LABEL,PARTLABEL
