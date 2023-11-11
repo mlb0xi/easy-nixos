@@ -11,8 +11,6 @@
 "./system/network.nix"
 "./system/homemanager.nix"
 "./system/locale.nix"
-"./system/libvirt.nix"
-"./system/serial0.nix"
 "./server/pak_console.nix"
 "./server/openssh.nix"
 "./server/bash.nix"
@@ -24,8 +22,5 @@
 "./desktop/gnome.nix"
 "./desktop/gsettings.nix"
 "./apps/office.nix"
-"./apps/chromium.nix"
 "./apps/firefox.nix"
-"./apps/thunderbird.nix"
-"./apps/video-downloader-git.nix"
 ]
