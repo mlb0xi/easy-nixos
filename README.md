@@ -87,6 +87,7 @@ Au reboot, tout sera en place.
 Voici les lignes de commande pour paramétrer ainsi depuis un disque vierge, en commençant par le formatage du disque :
 
 ```bash
+# Modifier ici avec le nom du disque où installer NixOS
 target_device=/dev/sda
 
 # Table de partitionnement et partitions
@@ -113,6 +114,9 @@ fatlabel $target_device"1" UEFI1
 mkfs.ext4 -F $target_device"2"
 tune2fs -L nixos1 $target_device"2"
 
+# Vérifions nos partitions
+lsblk -o NAME,SIZE,LABEL,PARTLABEL
+
 ```
 
 A ce niveau, on a un disque bien configuré, il faut ensuite :
@@ -131,7 +135,21 @@ mount $target_device"1" /mnt/boot/efi
 # Installation du dépôt
 # (pas besoin d'installer git de manière permanente grâce à nix-shell)
 nix-shell -p git --run "git clone https://github.com/mlb0xi/easy-nixos /mnt/etc/nixos"
+```
 
+De même que pour l'installation depuis une fresh install de Nixos, vérifier que la configuration des modules correspond à votre config (notamment matérielle), dans `/etc/nixos/config/maMachine-modules.nix`
+
+Voici en détail ce qu'il faut regarder :
+- dans `hardware`, avez-vous un full intel (`intelcpu` et `intelgpu`). Sinon, modifier pour AMD ou Nvidia,
+- dans `system`, est-ce que vous voulez un pare-feu (par défaut oui), un `swap` sous forme de swapfile, etc.
+- dans `desktop`, par défaut c'est GNOME,
+- dans `apps`, quelles applications souhaitez-vous installer (plusieurs packs sont proposés pour le multimedia, gaming, etc.).
+
+Ensuite, il faut aller personnaliser son nom d'utilisateur dans `/etc/nixos/config/maMachine-conf.nix`.
+
+Et voilà. On va pouvoir lancer l'installation.
+
+```
 # Préparation de l'installation
 echo '"/mnt/etc/nixos/"' > /mnt/etc/nixos/cfgpath.nix
 cp /mnt/etc/nixos/machine.nix /etc/nixos/
@@ -140,4 +158,3 @@ cp /mnt/etc/nixos/cfgpath.nix /etc/nixos/
 # Installation en tant que telle
 nixos-install
 ```
-
