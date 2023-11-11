@@ -128,16 +128,16 @@ mount $target_device"2" /mnt
 mkdir -p /mnt/boot/efi
 mount $target_device"1" /mnt/boot/efi
 
-###
-# Copier ensuite le contenu du dépôt github sur /mnt/etc/nixos
-###
+# Installation du dépôt
+# (pas besoin d'installer git de manière permanente grâce à nix-shell)
+nix-shell -p git --run "git clone https://github.com/mlb0xi/easy-nixos /mnt/etc/nixos"
 
-# Puis entrer les commandes suivantes
-
+# Préparation de l'installation
 echo "/mnt/etc/nixos" > /mnt/etc/nixos/cfgpath.nix
 cp /mnt/etc/nixos/machine.nix /etc/nixos/
 cp /mnt/etc/nixos/cfgpath.nix /etc/nixos/
 
+# Installation en tant que telle
 nixos-install
 ```
 
