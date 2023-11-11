@@ -15,7 +15,6 @@ in
   nixpkgs.config.permittedInsecurePackages = [ "electron-21.4.0" "electron-24.8.6" "openssl-1.1.1w" "openssl-1.1.1v" ];
 
   hardware.enableRedistributableFirmware = lib.mkDefault true;
-  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   systemd.extraConfig = ''
     DefaultTimeoutStopSec=10s
