@@ -4,15 +4,10 @@
 
     # Outils GNOME+
     gcolor3
-    peek
     flameshot
-
-    # Sound
-    easyeffects
 
     # Plus
     flatpak
-    krename
 
     # Icon theme
     papirus-icon-theme

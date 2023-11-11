@@ -32,10 +32,6 @@
     lshw
     dmidecode
     smartmontools
-
-    # Autres
-    mediainfo
-    glaxnimate
   ];
 
 }

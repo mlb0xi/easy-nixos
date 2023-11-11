@@ -15,6 +15,9 @@
     autorandr
     xorg.libxcvt
     
+    # Non classées
+    glaxnimate
+    
     ];
 
 }

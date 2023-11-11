@@ -2,8 +2,15 @@
 
 {
   environment.systemPackages = with pkgs; [
+    
+    # Sound
+    easyeffects
     clementine
 
+    # Image
+    gimp
+    
+    # Video
     vlc
     celluloid
     hypnotix
@@ -15,6 +22,7 @@
     kdenlive
     #davinci-resolve
     obs-studio  
+    peek
 
   ];
 }

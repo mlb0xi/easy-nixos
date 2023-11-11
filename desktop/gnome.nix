@@ -11,16 +11,10 @@ let
   ext4_options = config.ext4_options;
 
   gnomeCustom = with pkgs; [
-    gimp
-    gparted
-    pika-backup
-
     gnome.gnome-terminal
     gnome.gnome-tweaks
     gnome.dconf-editor
     dconf2nix
-    gnome.gedit
-    endeavour
   ];
   
 
