@@ -133,7 +133,7 @@ mount $target_device"1" /mnt/boot/efi
 nix-shell -p git --run "git clone https://github.com/mlb0xi/easy-nixos /mnt/etc/nixos"
 
 # Préparation de l'installation
-echo '\"/mnt/etc/nixos\"' > /mnt/etc/nixos/cfgpath.nix
+echo '"/mnt/etc/nixos"' > /mnt/etc/nixos/cfgpath.nix
 cp /mnt/etc/nixos/machine.nix /etc/nixos/
 cp /mnt/etc/nixos/cfgpath.nix /etc/nixos/
 
