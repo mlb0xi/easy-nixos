@@ -110,7 +110,7 @@ partprobe -s "$target_device"
 mkfs.vfat -F32 $target_device"1"
 fatlabel $target_device"1" UEFI1
 
-mkfs.ext4 $target_device"2"
+mkfs.ext4 -F $target_device"2"
 tune2fs -L nixos1 $target_device"2"
 
 ```
