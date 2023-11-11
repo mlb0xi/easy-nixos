@@ -94,7 +94,7 @@ target_device=/dev/sda
 sgdisk -Z "$target_device"
 
 sgdisk \
-  --new=1:0:+256M \
+  --new=1:0:256M \
   --typecode=1:ef00 \
   --change-name=1:uefi1 \
   $target_device
