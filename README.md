@@ -33,10 +33,14 @@ Il faut s'assurer d'avoir :
 - un paramétrage correct pour les `label` des partitions, via la commande suivante.
 
 ```bash
+# Modifier ici avec le nom du disque où installer NixOS
+# target_device=/dev/nvme0n1
 target_device=/dev/sda
 
+# Modification des LABEL
 nix-shell -p gptfdisk --run "sgdisk --change-name=1:uefi1 $target_device"
-tune2fs -L nixos1 $target_device"2"
+nix-shell -p gptfdisk --run "sgdisk --change-name=2:nixos1 $target_device"
+tune2fs -L nixos1 /dev/disk/by-partlabel/nixos1
 
 partprobe -s "$target_device"
 ```
