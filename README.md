@@ -108,11 +108,8 @@ sgdisk \
 partprobe -s "$target_device"
 
 # Systèmes de fichiers
-mkfs.vfat -F32 $target_device"1"
-fatlabel $target_device"1" UEFI1
-
-mkfs.ext4 -F $target_device"2"
-tune2fs -L nixos1 $target_device"2"
+mkfs.vfat -n UEFI1 -F32 $target_device"1"
+mkfs.ext4 -L nixos1 -F $target_device"2"
 
 # Vérifions nos partitions
 lsblk -o NAME,SIZE,LABEL,PARTLABEL
