@@ -9,7 +9,7 @@
       #fira-code
       #fira-code-symbols
       ubuntu_font_family
-      nerdfonts
+      #nerdfonts
       #(nerdfonts.override { fonts = [ "FiraCode" ]; })
     ];
 
