@@ -10,14 +10,6 @@ let
   xkbOptions = config.xkbOptions;
   ext4_options = config.ext4_options;
 
-  gnomeCustom = with pkgs; [
-    gnome.gnome-terminal
-    gnome.gnome-tweaks
-    gnome.dconf-editor
-    dconf2nix
-  ];
-  
-
 in
 
 {
@@ -49,17 +41,11 @@ in
   ];
 
 
-  environment.systemPackages = with pkgs.gnomeExtensions; [
-     just-perfection
-    dash-to-panel
-    appindicator
-    #arcmenu
-    vitals
-    #tray-icons-reloaded
-    forge
-    pop-shell
-    #custom-hot-corners-extended
-    user-themes
-  ] ++ gnomeCustom;
+  environment.systemPackages = with pkgs; [
+    gnome.gnome-terminal
+    gnome.gnome-tweaks
+    gnome.dconf-editor
+    dconf2nix
+  ];
 
 }
