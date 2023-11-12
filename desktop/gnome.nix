@@ -30,7 +30,6 @@ in
   services.packagekit.enable = false;
   services.flatpak.enable = true;
   services.blueman.enable = true;
-  
 
   environment.gnome.excludePackages = with pkgs; [
     gnome.gnome-music gnome-tour gnome-photos gnome.gnome-characters
@@ -39,7 +38,6 @@ in
     gnome.gnome-font-viewer gnome.gnome-software gnome.geary xterm
     gnome.gnome-packagekit packagekit system-config-printer gnome-tour
   ];
-
 
   environment.systemPackages = with pkgs; [
     gnome.gnome-terminal
