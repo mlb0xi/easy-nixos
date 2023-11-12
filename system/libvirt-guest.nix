@@ -8,5 +8,7 @@
   environment.systemPackages = with pkgs; [
     spice-vdagent  
   ];
+  
+  services.spice-vdagentd.enable = true;
 
 }
