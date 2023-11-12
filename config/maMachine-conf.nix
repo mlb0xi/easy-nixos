@@ -1,7 +1,7 @@
 {
   # configuration.nix (system)
   nixos_version   = "23.05";
-  username        = "NomUtilisateur";
+  username        = "myUser";
 
   # fullencrypt.nix (system)
   # seulement utile en cas de chiffrement complet du disque

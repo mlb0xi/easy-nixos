@@ -5,6 +5,7 @@
 # System
 "grub" "fstab" "trim" "swapfile"
 "firewall" "network" "homemanager" "locale"
+"libvirt-guest" # ne pas supprimer si on est dans une VM
 
 # Server
 "pak_console" "openssh" 

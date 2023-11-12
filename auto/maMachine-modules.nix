@@ -11,6 +11,7 @@
 "./system/network.nix"
 "./system/homemanager.nix"
 "./system/locale.nix"
+"./system/libvirt-guest.nix"
 "./server/pak_console.nix"
 "./server/openssh.nix"
 "./server/bash.nix"
