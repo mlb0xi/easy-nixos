@@ -3,7 +3,7 @@
 "bluetooth" "soundcard"
 
 # System
-"grub" "fstab" "trim" "swapfile"
+"grub" "fstab" "trim"
 "firewall" "network" "homemanager" "locale"
 "libvirt-guest" # ne pas supprimer si on est dans une VM
 

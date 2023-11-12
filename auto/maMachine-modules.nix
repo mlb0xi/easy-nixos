@@ -6,7 +6,6 @@
 "./system/grub.nix"
 "./system/fstab.nix"
 "./system/trim.nix"
-"./system/swapfile.nix"
 "./system/firewall.nix"
 "./system/network.nix"
 "./system/homemanager.nix"

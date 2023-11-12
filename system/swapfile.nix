@@ -12,6 +12,11 @@ in
 {
   boot.kernelParams = [ "resume_offset=${resume_offset}" ];
   boot.resumeDevice = "/dev/disk/by-label/${root_label}";
+  
+    swapDevices = [ {
+      device = "/swap/swapfile";
+      size = 32768;
+    } ];
 
   systemd.services = {
     create-swapfile = {

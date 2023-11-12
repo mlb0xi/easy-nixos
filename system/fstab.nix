@@ -34,27 +34,6 @@ in
 
   };
 
-
-
-
-  # Swapfile
-  systemd.services = {
-    create-swapfile = {
-      serviceConfig.Type = "oneshot";
-      wantedBy = [ "swap-swapfile.swap" ];
-      script = ''
-        ${pkgs.coreutils}/bin/truncate -s 0 /swap/swapfile
-        ${pkgs.e2fsprogs}/bin/chattr +C /swap/swapfile
-      '';
-    };
-  };
-
-  swapDevices = [ {
-    device = "/swap/swapfile";
-    size = 32768;
-  } ];
-
-
   boot.initrd.availableKernelModules = [ 
     "xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" "rtsx_pci_sdmmc"
   ];
