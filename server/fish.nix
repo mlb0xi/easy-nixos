@@ -24,9 +24,9 @@ in
     nixlist = "sudo nix-env --list-generations --profile /nix/var/nix/profiles/system";
     nixs = "nix-shell";
     nixsp = "nix-shell -p";
-    nixup = "bash ${cfgpath}/bash/nixos-autoModules.sh && bash ${cfgpath}/bash/prefetch-update.sh && sudo nix-channel --update && nixrb";
-    nixrs = "bash ${cfgpath}/bash/nixos-autoModules.sh && bash ${cfgpath}/bash/prefetch-update.sh && sudo nixos-rebuild switch";
-    nixrb = "bash ${cfgpath}/bash/nixos-autoModules.sh && bash ${cfgpath}/bash/prefetch-update.sh && sudo nixos-rebuild boot";
+    nixup = "sudo nix-channel --update && nixrb";
+    nixrs = "bash ${cfgpath}/bash/nixos-autoModules.sh && bash ${cfgpath}/bash/prefetch-git-apps.sh && sudo nixos-rebuild switch";
+    nixrb = "bash ${cfgpath}/bash/nixos-autoModules.sh && bash ${cfgpath}/bash/prefetch-git-apps.sh && sudo nixos-rebuild boot";
   };
 
 
