@@ -15,11 +15,6 @@ let
     kaccounts-providers
     kaccounts-integration
     kate
-    kitinerary
-    knotes
-    audiotube
-    kwave
-    juk
   ];
 
 in
@@ -47,9 +42,6 @@ in
 
   environment.systemPackages = with pkgs; [
     krita
-    media-downloader
-    partition-manager
-    vorta
   ] ++ kdeNative;
 
 
